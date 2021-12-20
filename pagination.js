@@ -38,6 +38,7 @@ class Pagination {
         this.linksNum = this.checkTotalPages(); // this.total or total.max
         this.centerIndex = Math.ceil(this.linksNum / 2);
         this.links = this.createLinks(); // all displayed link elements
+        this.setCurrentLinks()
         this.currentIndex;
         this.currentLinks = new Object; // pattern for dinamyc changing of displayed links
 
@@ -93,7 +94,7 @@ class Pagination {
 
     startingDisplay(){
         document.querySelector(this.selectors.display).innerHTML = this.pages[0];
-        if (this.total > this.max) {
+        if (this.total >= this.max) {
         this.rightArrowBtn.classList.add(this.stateClasses.btnActive);
         }
     }
@@ -101,6 +102,7 @@ class Pagination {
     setCurrentLinks(currentNum) {
         console.log("centerIndex - " + this.centerIndex, "currentNum - " + currentNum);
         if (this.total > this.max) {
+            console.log("veceeeeeeee");
             if (this.centerIndex <= currentNum && currentNum <= (this.total - this.centerIndex)) {
                 console.log("middle",this.currentLinks);
                 this.currentLinks = [1, "...", ...this.setMiddleLinks(currentNum), "...", this.total]
@@ -121,6 +123,7 @@ class Pagination {
                 this.rightArrowBtn.classList.add(this.stateClasses.btnActive);
             }
         }else{
+            console.log("manjeeeeeee");
             this.leftArrowBtn.classList.remove(this.stateClasses.btnActive);
             this.rightArrowBtn.classList.remove(this.stateClasses.btnActive);
         }
