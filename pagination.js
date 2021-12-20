@@ -67,7 +67,7 @@ class Pagination {
             for (let i = 1; i <= this.linksNum - 2; i++) {
                 this.linkBox.innerHTML += `<a href="" class="${this.dynamicClasses.link}">${i}</a>`
             };
-            this.linkBox.innerHTML += `<a href="" class="${this.dynamicClasses.link}">...</a>`
+            this.linkBox.innerHTML += `<a style="pointer-events: none" href="" class="${this.dynamicClasses.link}">...</a>`
             this.linkBox.innerHTML += `<a href="" class="${this.dynamicClasses.link}">${this.total}</a>`
         }
         let firstLink = (this.ctx.querySelector(this.selectors.link))
@@ -162,6 +162,9 @@ class Pagination {
     arangeLinksFromPattern(){
         this.links.forEach((el, index) => {
             el.innerHTML = this.currentLinks[index];
+            if (el.innerHTML == "..."){
+                el.style = "pointer-events: none"
+            }
         })
     }
 
