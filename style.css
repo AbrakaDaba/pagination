@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    height: 100vh;
+    max-height: 100vh;
+    padding: 30% 50px 50px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.app__tester{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 250px;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    border-bottom-right-radius: 5px;
+}
+
+.tester .js-changeParamsBtn{
+    padding: 5px;
+    width: 100%;
+    font-size: 20px;
+    margin: 15px 0 0 0;
+    border-radius: 5px;
+}
+
+.tester input{
+    width: 100%;
+    margin-right: 10px;
+}
+
+span[class^='tester__display']{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 89, 255);
+}
+
+.app__display {
+    text-align: center;
+    font-size: 120px;
+}
+
+.pagination {
+    font-size: 30px;
+    display: inline-flex;
+    margin: 0 auto;
+}
+
+.pagination__links {
+    display: flex;
+    padding: 0 5px;
+}
+
+.pagination__links-item {
+    margin: 0 10px;
+    color: grey;
+    font-weight: lighter;
+    cursor: pointer;
+    text-decoration: none;
+}
+.pagination__links-item:hover { 
+    color: black; 
+}
+
+.pagination__links-item--active {
+    color: black;
+    font-weight: normal;
+    transform: scale(1.1);
+    transition: .25s all ease;
+}
+.pagination__links-item--disabled {
+    color: grey;
+    user-select: none;
+}
+
+button[class^='pagination__btn'] {
+    color: grey;
+    border: none;
+    background: none;
+    font-size: 30px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+button.pagination__btn--active{
+    color: black;
+    pointer-events: all;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./main.js" type="module"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <form class="app__tester tester" onsubmit="event.preventDefault();">
+            <h2 class="tester__title">Tester</h2>
+            <label for="js-totalPages">Total number of pages - <span class="tester__displayTotal"></span></label><br>
+            <input id="js-totalPages" type="range" min = "1", max = "99"><br>
+            <label for="js-maxDisplayedLinks">Max Displayed Links - <span class="tester__displayMax"></span></label><br>
+            <input id="js-maxDisplayedLinks" type="range" min = "1", max = "21" value="7"><br>
+            <button type="submit" class="js-changeParamsBtn">Change params</button>
+        </form>
+        <div class="app__display"></div>
+        <div class="pagination">
+            <button class="pagination__btn-left js-arrow-left">&lang;</button>
+            <div class="pagination__links"></div>
+            <button class="pagination__btn-right js-arrow-right">&rang;</button>
+        </div>
+    </div>
+</body>
+
+</html>
