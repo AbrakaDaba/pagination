@@ -93,7 +93,9 @@ class Pagination {
 
     startingDisplay(){
         document.querySelector(this.selectors.display).innerHTML = this.pages[0];
+        if (this.total > this.max) {
         this.rightArrowBtn.classList.add(this.stateClasses.btnActive);
+        }
     }
 
     setCurrentLinks(currentNum) {
@@ -118,6 +120,9 @@ class Pagination {
                 this.leftArrowBtn.classList.remove(this.stateClasses.btnActive);
                 this.rightArrowBtn.classList.add(this.stateClasses.btnActive);
             }
+        }else{
+            this.leftArrowBtn.classList.remove(this.stateClasses.btnActive);
+            this.rightArrowBtn.classList.remove(this.stateClasses.btnActive);
         }
     }
 
@@ -178,6 +183,7 @@ class Pagination {
         let currentNum = parseInt(this.links[this.centerIndex - 1].innerHTML) 
         this.setCurrentLinks(currentNum + (this.linksNum - 4));
         this.displayPage(currentNum + (this.linksNum - 5)); 
+        this.markCurrentLink(this.links[this.linksNum - this.centerIndex]);
     }
     
 }
