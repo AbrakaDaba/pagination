@@ -94,7 +94,7 @@ class Pagination {
 
     startingDisplay(){
         document.querySelector(this.selectors.display).innerHTML = this.pages[0];
-        if (this.total >= this.max) {
+        if (this.total > this.max) {
         this.rightArrowBtn.classList.add(this.stateClasses.btnActive);
         }
     }
