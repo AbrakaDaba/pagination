@@ -164,6 +164,8 @@ class Pagination {
             el.innerHTML = this.currentLinks[index];
             if (el.innerHTML == "..."){
                 el.style = "pointer-events: none"
+            }else{
+                el.style = "pointer-events: all"
             }
         })
     }
